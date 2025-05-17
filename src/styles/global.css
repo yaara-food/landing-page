@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+.font-size-80  { font-size: 80%; }
+.font-size-100 { font-size: 100%; }
+.font-size-120 { font-size: 120%; }
+.font-size-150 { font-size: 150%; }
+.font-size-200 { font-size: 200%; }
+html.high-contrast {
+    color: yellow !important;
+    background-color: #000 !important;
+}
+
+html.high-contrast * {
+    color: yellow !important;
+    border-color: yellow !important;
+}
+
+html.high-contrast section,
+html.high-contrast header,
+html.high-contrast footer,
+html.high-contrast main,
+html.high-contrast .card,
+html.high-contrast .accessibility-panel,
+html.high-contrast .rounded-2xl,
+html.high-contrast .bg-lime-200,
+html.high-contrast .p-4 {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+html.high-contrast button,
+html.high-contrast .btn,
+html.high-contrast .accessibility-panel button {
+    background-color: black !important;
+    color: yellow !important;
+    border: 1px solid yellow !important;
+}
+
+html.high-contrast a {
+    color: yellow !important;
+    text-decoration: underline;
+}
+.invert {
+    filter: invert(1) !important;
+}
+.grayscale {
+    filter: grayscale(1) !important;
+}
+.underline-links a {
+    text-decoration: underline !important;
+}
+.readable-font {
+    font-family: Arial, sans-serif !important;
+}

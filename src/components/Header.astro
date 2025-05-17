@@ -1,0 +1,53 @@
+---
+import AccessibilityBar from "../components/AccessibilityBar.astro";
+---
+<header class="w-full backdrop-blur-md shadow z-50" dir="rtl">
+    <AccessibilityBar/>
+    <div class="max-w-7xl mx-auto flex flex-col items-center justify-center py-4 px-6 gap-4">
+
+        <!-- Row 1: Logo + Social -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+            <!-- Social icons -->
+            <div class="bg-green-900 text-white rounded-full px-6 py-2 flex items-center gap-5">
+                <a href="#" aria-label="Facebook" class="hover:opacity-80">
+                    <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                        <path d="M13 3h4V0h-4c-2.21 0-4 1.79-4 4v2H7v4h2v12h4V10h3l1-4h-4V4c0-.55.45-1 1-1z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram" class="hover:opacity-80">
+                    <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3.2"/>
+                        <path d="M7.5 2h9A5.5 5.5 0 0122 7.5v9a5.5 5.5 0 01-5.5 5.5h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2z"/>
+                    </svg>
+                </a>
+                <a href="mailto:example@yaara.com" aria-label="Email" class="hover:opacity-80">
+                    <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                        <path d="M2 4h20v16H2z" fill="none"/>
+                        <path d="M2 4v16h20V4H2zm10 9.5L4.5 6h15L12 13.5z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Logo -->
+            <div class="bg-green-900 p-3 rounded-md">
+                <img src="/logo.png" alt="יערה - מקום לצמוח" class="h-24 w-auto"/>
+            </div>
+        </div>
+
+        <!-- Row 2: Navigation -->
+        <nav>
+            <ul class="flex justify-center text-white text-sm font-medium bg-green-900 rounded overflow-hidden">
+                <li><a href="/" class="px-4 py-2 hover:bg-green-800">דף הבית</a></li>
+                <li><a href="/המרחב-השיקומי" class="px-4 py-2 hover:bg-green-800">המרחב השיקומי</a></li>
+                <li><a href="/המשתלה החברתית" class="px-4 py-2 hover:bg-green-800">המשתלה החברתית</a></li>
+                <li><a href="#" class="px-4 py-2 hover:bg-green-800">גלריה</a></li>
+                <li><a href="#" class="px-4 py-2 hover:bg-green-800">עלינו</a></li>
+                <li><a href="#" class="px-4 py-2 hover:bg-green-800">לחוות שלנו</a></li>
+                <li><a href="#" class="px-4 py-2 hover:bg-green-800">בלוג</a></li>
+                <li><a href="#" class="px-4 py-2 hover:bg-green-800">לקחת חלק</a></li>
+                <li><a href="#contact" class="px-4 py-2 bg-green-700 hover:bg-green-800">צרו קשר</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>

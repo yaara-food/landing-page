@@ -1,0 +1,21 @@
+---
+// File: src/pages/index.astro
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+---
+
+<html lang="he" dir="rtl">
+<head>
+	<meta charset="UTF-8" />
+	<title>יערה - ברוכים הבאים</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="bg-[url('/background.jpeg')] bg-cover bg-fixed min-h-screen flex flex-col items-center justify-start p-4 space-y-16">
+<Header />
+<iframe
+	src="/home"
+	class="w-full h-[1500px] border-0 rounded-xl shadow-xl overflow-hidden"
+	title="יערה - מקום לצמוח"
+></iframe>
+</body>
+</html>

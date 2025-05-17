@@ -1,0 +1,82 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+---
+
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>המשתלה החברתית - יערה</title>
+</head>
+<body class="bg-[url('/background.jpeg')] bg-cover bg-fixed min-h-screen flex flex-col items-center justify-start p-4 space-y-16 text-right">
+<Header />
+
+<main class="relative bg-lime-200 bg-opacity-90 rounded-2xl shadow-md max-w-6xl w-full px-6 py-12 text-zinc-900 font-[alef-regular,sans-serif] text-[15px] leading-[1.8] overflow-hidden">
+
+    <!-- Title section -->
+    <div class="text-center space-y-1 mb-6 z-10 relative">
+        <h1 class="text-2xl font-bold text-white drop-shadow-md">
+            משתלת היער – המשתלה החברתית
+        </h1>
+        <p class="text-white text-lg drop-shadow-md">בשיתוף עמותת</p>
+        <img src="/gonim.avif" alt="גונים" class="h-10 mx-auto" />
+        <hr class="mt-4 border-t border-dashed border-gray-500 w-1/2 mx-auto" />
+    </div>
+
+    <!-- Top floating images -->
+    <img src="/nursery1.avif" class="absolute top-[-40px] left-[-50px] w-[160px] rotate-[-6deg] border-4 border-white rounded-lg shadow-lg" alt="nursery1" />
+    <img src="/nursery2.avif" class="absolute top-[-30px] right-[-40px] w-[160px] rotate-[6deg] border-4 border-white rounded-lg shadow-lg" alt="nursery2" />
+
+    <!-- Bottom floating images -->
+    <img src="/nursery3.avif" class="absolute bottom-[-40px] right-[20px] w-[160px] rotate-[4deg] border-4 border-white rounded-lg shadow-lg" alt="nursery3" />
+    <img src="/nursery4.avif" class="absolute bottom-[-50px] left-[10px] w-[160px] rotate-[5deg] border-4 border-white rounded-lg shadow-lg" alt="nursery4" />
+
+    <!-- Main content text -->
+    <div class="z-10 relative space-y-4">
+        <p>
+            המשתלה שלנו מהווה מרכז שיקום תעסוקתי והכשרה מקצועית – מסגרת רב־כיוונית המאפשרת למתמודדים בתחום בריאות הנפש והצרכים המיוחדים לעבוד ולרכוש ידע בתחום השתלנות והגינון האקולוגי.
+        </p>
+        <p>
+            יחד אנו מפעילים חממה אורגנית שמשתפת גידול צמחים המיועדים ליער המאכל ובה אנו מגדלים עצי פרי, עצי חולץ, שתילים, ירקות וצמחי מרפא. את הייחורים והזרעים אנו אוספים מה הר, משתילים, משבחים ועוד.
+        </p>
+        <p>
+            את רוב השתילים הדקבקנו במיקרוקיד, והמליצו לנו הצמחה ומשפחת הצמיחו את עמידותו במצבי קצה.
+        </p>
+
+        <p class="text-center font-bold mt-6">
+            מוזמנות ומוזמנים לבצע הזמנה בטלפון או לקפוץ לבקר
+        </p>
+
+        <h2 class="text-center text-green-800 font-bold text-lg">
+            הגעה למשתלה בתיאום מראש עם נועם או צאלה:
+        </h2>
+        <p class="text-center text-green-900 font-bold">
+            0545712870 – נועם<br />
+            0525240955 / 0528089888 – צאלה
+        </p>
+    </div>
+
+    <!-- Call to actions -->
+    <div class="relative z-10 flex flex-col items-center gap-4 mt-6">
+        <a href="#" class="bg-white text-green-900 font-bold px-6 py-2 rounded shadow hover:bg-green-100 transition">
+            קטלוג הצמחים 🌱
+        </a>
+        <a href="https://www.facebook.com/example" target="_blank" class="bg-white text-green-900 font-bold px-6 py-2 rounded shadow hover:bg-blue-100 transition flex items-center gap-2">
+            <svg class="w-5 h-5 fill-blue-600" viewBox="0 0 24 24"><path d="M13 3h4V0h-4c-2.21 0-4 1.79-4 4v2H7v4h2v12h4V10h3l1-4h-4V4c0-.55.45-1 1-1z"/></svg>
+            עמוד הפייסבוק של המשתלה
+        </a>
+    </div>
+
+    <!-- Sponsors -->
+    <div class="relative z-10 mt-10">
+        <h2 class="text-center font-bold text-green-800 text-lg">התורמים שלנו:</h2>
+        <div class="flex flex-wrap justify-center items-center gap-8 mt-4">
+            <img src="/applied.avif" alt="Applied Materials" class="h-16" />
+            <img src="/soli.avif" alt="SOLI Seeds & Agro Projects" class="h-16" />
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

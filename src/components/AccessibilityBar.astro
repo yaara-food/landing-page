@@ -1,0 +1,143 @@
+---
+// No props needed
+---
+<style>
+    .accessibility-bar {
+        position: fixed;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+    }
+
+    .accessibility-button {
+        background-color: #124cda;
+        color: white;
+        border: none;
+        border-radius: 9999px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
+    .accessibility-panel {
+        margin-top: 0.5rem;
+        width: 220px;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .accessibility-panel button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0.4rem;
+        margin-bottom: 0.4rem;
+        border: none;
+        border-radius: 0.25rem;
+        background: #f0f0f0;
+        cursor: pointer;
+    }
+
+    .accessibility-panel button.selected {
+        background-color: #e0f7fa;
+        font-weight: bold;
+    }
+
+    .hidden { display: none; }
+</style>
+
+<div class="accessibility-bar mt-61" dir="rtl" >
+    <button class="accessibility-button" id="accessibility-toggle" title="אפשרויות נגישות">🧑‍🦯</button>
+
+    <div class="accessibility-panel hidden" id="accessibility-panel">
+        <button id="zoom-in">הגדל טקסט ➕</button>
+        <button id="zoom-out">הקטן טקסט ➖</button>
+        <button id="grayscale">גווני אפור</button>
+        <button id="contrast">ניגודיות גבוהה</button>
+        <button id="invert">היפוך צבעים</button>
+        <button id="underline">קו תחתון לקישורים</button>
+        <button id="readable">פונט קריא</button>
+        <button id="reset">איפוס</button>
+        <button onclick="window.open('/legal/accessibility', '_blank')">הצהרת נגישות ⚖️</button>
+    </div>
+
+    <script is:client>
+        const toggle = document.getElementById("accessibility-toggle");
+        const panel = document.getElementById("accessibility-panel");
+
+        toggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            panel.classList.toggle("hidden");
+        });
+
+        // 🔒 Click outside closes the panel
+        document.addEventListener("click", (event) => {
+            if (
+                !panel.classList.contains("hidden") &&
+                !panel.contains(event.target) &&
+                event.target !== toggle
+            ) {
+                panel.classList.add("hidden");
+            }
+        });
+
+        const root = document.documentElement;
+        const sizes = [80, 100, 120, 150, 200];
+        let fontSize = 100;
+
+        const applyClasses = () => {
+            root.classList.remove(...sizes.map(s => `font-size-${s}`));
+            root.classList.add(`font-size-${fontSize}`);
+        };
+
+        document.getElementById("zoom-in").onclick = () => {
+            if (fontSize < 200) {
+                fontSize = sizes.find(s => s > fontSize) || 200;
+                applyClasses();
+            }
+        };
+
+        document.getElementById("zoom-out").onclick = () => {
+            if (fontSize > 80) {
+                fontSize = [...sizes].reverse().find(s => s < fontSize) || 80;
+                applyClasses();
+            }
+        };
+
+        document.getElementById("grayscale").onclick = () =>
+            root.classList.toggle("grayscale");
+
+        document.getElementById("contrast").onclick = () =>
+            root.classList.toggle("high-contrast");
+
+        document.getElementById("invert").onclick = () =>
+            root.classList.toggle("invert");
+
+        document.getElementById("underline").onclick = () =>
+            root.classList.toggle("underline-links");
+
+        document.getElementById("readable").onclick = () =>
+            root.classList.toggle("readable-font");
+
+        document.getElementById("reset").onclick = () => {
+            fontSize = 100;
+            applyClasses();
+            root.classList.remove(
+                "grayscale",
+                "high-contrast",
+                "invert",
+                "underline-links",
+                "readable-font"
+            );
+        };
+
+        applyClasses();
+    </script>
+</div>
